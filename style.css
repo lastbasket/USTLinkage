@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: scroll;
+}
+
+.container {
+  flex-direction: row;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 15vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  position: relative;
+  -webkit-transition: all 100ms ease-in;
+  transition: all 100ms ease-in;
+}
+
+.panel h1 {
+  display: none;
+  font-size: 50px;
+  opacity: 0;
+}
+
+.panel h2 {
+  padding-top: 2%;
+  font-size: 50px;
+  opacity: 1;
+}
+
+.panel a {
+  display: none;
+  font-size: 30px;
+  opacity: 0;
+}
+
+.panel.active {
+  height: 500px;
+  flex: auto;
+}
+
+.panel.active h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  display: inline-block;
+  opacity: 1;
+  transition: opacity 0.1s ease-in 0.1s;
+}
+
+.panel.active h2 {
+  opacity: 0;
+}
+
+.panel.active a {
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 20px;
+  width: 500px;
+  height: 40px;
+  background: #5e498a;
+  display: block;
+  color: #fff;
+  word-break: break-all;
+  margin: 5px auto;
+  opacity: 1;
+  text-align: center;
+  transition: opacity 0.1s ease-in 0.1s;
+}
+
+.panel.active a:hover {
+  display: block;
+  color: rgb(92, 93, 119);
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
